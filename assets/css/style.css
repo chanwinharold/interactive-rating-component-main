@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  font-family: Overpass, sans-serif;
+  background-color: hsl(216, 12%, 8%);
+}
+
+.form {
+  display: flex;
+}
+.form__image {
+  border-radius: 50%;
+  background-color: hsl(213, 19%, 23%);
+}
+.form__button {
+  color: hsl(216, 12%, 8%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.15rem;
+  padding: 1rem;
+  background-color: hsl(25, 97%, 53%);
+  border-radius: 30px;
+  border: none;
+}
+.form__button:hover {
+  background-color: white;
+}
+
+.container {
+  border: none;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+.container__element {
+  padding: 0.75rem 1rem;
+  background-color: hsl(213, 19%, 23%);
+  border-radius: 50%;
+}
+.container__element:hover {
+  color: black;
+  background-color: hsl(25, 97%, 53%);
+}
+.container input {
+  appearance: none;
+}
+.container input:checked + label {
+  color: black;
+  background-color: white;
+}
+.container legend {
+  display: none;
+}
+
+.modal {
+  position: unset;
+  display: none;
+  align-items: center;
+  text-align: center;
+  border: none;
+}
+.modal__info {
+  color: hsl(25, 97%, 53%);
+  padding: 0.5rem 1rem;
+  background-color: hsl(213, 19%, 23%);
+  border-radius: 30px;
+}
+
+.form, .modal {
+  place-self: center;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 30px;
+  color: white;
+  background-color: hsl(213, 19%, 18%);
+  padding: 2rem;
+}
+.form__image, .modal__image {
+  width: fit-content;
+  padding: 1rem;
+}
+.form__content__title, .modal__content__title {
+  font-size: 1.875rem;
+}
+@media screen and (max-width: 480px) {
+  .form__content__title, .modal__content__title {
+    font-size: 1.40625rem;
+  }
+}
+.form__content__paragraph, .modal__content__paragraph {
+  color: hsl(217, 12%, 63%);
+  font-size: 1.125rem;
+  margin-block: 0.8rem;
+}
+@media screen and (max-width: 480px) {
+  .form__content__paragraph, .modal__content__paragraph {
+    font-size: 0.9375rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .form, .modal {
+    max-width: 95vw;
+  }
+}
+@media screen and (min-width: 480px) {
+  .form, .modal {
+    max-width: 24rem;
+  }
+}
+
+.attribution {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+  place-self: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=style.css.map */

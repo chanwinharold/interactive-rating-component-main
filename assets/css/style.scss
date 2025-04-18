@@ -1,0 +1,149 @@
+
+//  Primary
+$star: hsl(25, 97%, 53%);
+
+//  Neutral
+$headers: hsl(0, 100%, 100%);
+$grey-500: hsl(217, 12%, 63%);
+$grey-900: hsl(213, 19%, 18%);
+$grey-950: hsl(216, 12%, 8%);
+
+//    Weight
+$bold: 400;
+$bolder: 700;
+
+//    Font size
+$fs: 0.9375rem;
+
+//  Font family
+$ff: Overpass, sans-serif;
+
+//  Media
+$sm: 480px;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &::after, &::before {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    font-family: $ff;
+    background-color: $grey-950;
+}
+
+.form {
+    display: flex;
+
+    &__image {
+        border-radius: 50%;
+        background-color: lighten($grey-900, 5);
+    }
+    &__button {
+        color: $grey-950;
+        text-transform: uppercase;
+        font-weight: $bolder;
+        font-size: $fs;
+        letter-spacing: 0.15rem;
+        padding: 1rem;
+        background-color: $star;
+        border-radius: 30px;
+        border: none;
+
+        &:hover {
+            background-color: white;
+        }
+    }
+}
+
+.container {
+    border: none;
+    font-weight: $bolder;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__element {
+        padding: 0.75rem 1rem;
+        background-color: lighten($grey-900, 5);
+        border-radius: 50%;
+        &:hover {
+            color: black;
+            background-color: $star;
+        }
+
+    }
+    input {
+        appearance: none;
+        &:checked + label {
+            color: black;
+            background-color: white;
+        }
+    }
+
+    legend { display: none; }
+}
+
+.modal {
+    position: unset; // for mozilla Firefox browser
+    display: none;
+    align-items: center;
+    text-align: center;
+    border: none;
+
+
+
+    &__info {
+        color: $star;
+        padding: 0.5rem 1rem;
+        background-color: lighten($grey-900, 5);
+        border-radius: 30px;
+    }
+}
+
+
+.form, .modal {
+    place-self: center;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 30px;
+    color: white;
+    background-color: $grey-900;
+    padding: 2rem;
+
+    &__image {
+        width: fit-content;
+        padding: 1rem;
+    }
+    &__content {
+        &__title {
+            font-size: $fs*2;
+            @media screen and (max-width: $sm) {
+                font-size: $fs*1.5;
+            }
+        }
+        &__paragraph {
+            color: $grey-500;
+            font-size: $fs*1.2;
+            margin-block: 0.8rem;
+            @media screen and (max-width: $sm) {
+                font-size: $fs*1;
+            }
+        }
+    }
+
+    @media screen and (max-width: $sm) {
+        max-width: 95vw;
+    }
+    @media screen and (min-width: $sm) {
+        max-width: 24rem;
+    }
+}
+.attribution { display: none; position: absolute; bottom: 0; font-size: 11px; text-align: center; place-self: center;}
+.attribution a { color: hsl(228, 45%, 44%); }

@@ -1,49 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta name="description" content="Interactive rating component">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <script src="assets/js/main.js" defer></script>
+
+    <title>Frontend Mentor | Interactive rating component</title>
 </head>
 <body>
 
-  <!-- Rating state start -->
+<!-- Rating state start -->
 
-  How did we do?
+<form class="form" method="post" action="">
+    <img class="form__image" src="assets/images/icon-star.svg" alt="A star">
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    <section class="form__content">
+        <h1 class="form__content__title">How did we do?</h1>
 
-  1 2 3 4 5
+        <p class="form__content__paragraph">Please let us know how we did with your support request. All feedback is appreciated
+            to help us improve our offering!</p>
+    </section>
 
-  Submit
+    <fieldset class="container">
+        <legend aria-hidden="true">Choose the number of stars</legend>
 
-  <!-- Rating state end -->
+        <div role="group">
+            <input id="one" type="radio" name="nbr_star" value="1">
+            <label class="container__element" for="one">1</label>
+        </div>
+        <div>
+            <input id="two" type="radio" name="nbr_star" value="2">
+            <label class="container__element" for="two">2</label>
+        </div>
+        <div>
+            <input id="three" type="radio" name="nbr_star" value="3">
+            <label class="container__element" for="three">3</label>
+        </div>
+        <div>
+            <input id="four" type="radio" name="nbr_star" value="4">
+            <label class="container__element" for="four">4</label>
+        </div>
+        <div>
+            <input id="five" type="radio" name="nbr_star" value="5">
+            <label class="container__element" for="five">5</label>
+        </div>
+    </fieldset>
 
-  <!-- Thank you state start -->
+    <button aria-controls="dialog-box" class="form__button" type="submit">Submit</button>
+</form>
 
-  You selected <!-- Add rating here --> out of 5
+<!-- Rating state end -->
 
-  Thank you!
+<!-- Thank you state start -->
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
+<dialog id="dialog-box" class="modal" aria-hidden="true">
+    <img class="modal__image" src="assets/images/illustration-thank-you.svg" alt="A smartphone">
+    <div class="modal__info" role="contentinfo" aria-label="Nombre d'étoiles">You selected <span></span> out of 5</div>
 
-  <!-- Thank you state end -->
+    <section class="modal__content">
+        <h2 class="modal__content__title">Thank you!</h2>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <p class="modal__content__paragraph">We appreciate you taking the time to give a rating. If you ever need more support,
+            don’t hesitate to get in touch!</p>
+    </section>
+</dialog>
+
+<!-- Thank you state end -->
+
+
+<footer class="attribution" aria-hidden="true">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/chanwinharold" target="_blank">@chanwinharold</a>.
+</footer>
 </body>
 </html>
